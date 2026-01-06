@@ -7,6 +7,9 @@ edition = "2024"
 members = ["./migration/"]
 
 [dependencies]
+async-graphql = { version = "7.1.0" }
+async-graphql-axum = { version = "7.1.0" }
+axum = "0.8.8"
 tokio = { version = "1.49.0", features = ["full"] }
 sqlx = { version = "0.8.6", features = [
   "mysql",

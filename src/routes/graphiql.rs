@@ -106,8 +106,8 @@ pub async fn build_graphiql() -> impl IntoResponse {
     response::Html(
         GraphiQLBuilder::build()
             .version("2.0.9")
-            .endpoint("/api/graphql")
-            .subscription_endpoint("/api/graphql/ws")
+            .endpoint("/graphql")
+            .subscription_endpoint("/graphql/ws")
             .finish(),
     )
 }
