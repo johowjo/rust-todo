@@ -7,3 +7,10 @@ edition = "2024"
 members = ["./migration/"]
 
 [dependencies]
+tokio = { version = "1.49.0", features = ["full"] }
+sqlx = { version = "0.8.6", features = [
+  "mysql",
+  "macros",
+  "runtime-tokio-rustls",
+] }
+dotenv = "0.15.0"
