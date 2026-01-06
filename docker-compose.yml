@@ -18,7 +18,7 @@ services:
       - mysql
   mysql:
     image: mysql:8.1.0
-    container_name: todos
+    container_name: todo
     environment:
       MYSQL_DATABASE: todo
       MYSQL_ROOT_PASSWORD: password
