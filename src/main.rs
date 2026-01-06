@@ -1,6 +1,11 @@
 mod db;
 mod graphql;
+mod routes;
+use db::Db;
+use dotenv::dotenv;
 
-fn main() {
-    println!("Hello, world!");
+#[tokio::main]
+async fn main() {
+    dotenv().ok();
+    let database = Db::init().await;
 }
