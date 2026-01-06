@@ -1,10 +1,11 @@
 mod db;
+mod entities;
 mod graphql;
 mod routes;
-use async_graphql::{EmptyMutation, EmptySubscription, Schema};
+use async_graphql::{EmptySubscription, Schema};
 use db::Db;
 use dotenv::dotenv;
-use graphql::query::Query;
+use graphql::{mutation::Mutation, query::Query};
 use routes::build_routes;
 use std::env::var;
 
@@ -13,7 +14,7 @@ async fn main() {
     dotenv().ok();
     let port: String = var("PORT").expect("PORT is not set");
     let db = Db::init().await;
-    let schema = Schema::build(Query, EmptyMutation, EmptySubscription)
+    let schema = Schema::build(Query, Mutation, EmptySubscription)
         .data(db)
         .finish();
 
